@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Assiettes, IARD et encadrement</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Karla:wght@400;700&display=swap" rel="stylesheet"><style>
+:root{--navy:#16243B;--blue:#1F4E79;--blue2:#2E75B6;--gold:#B08D57;--cream:#F5F2EB;--rule:#e3ddd0;--ok:#2F7A4F;--ko:#B23B3B;--amb:#B5852A}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);font-family:'Karla',Arial,sans-serif;color:#222;line-height:1.5}
+header{background:var(--navy);color:#fff;padding:22px 16px}header .in,main,footer .in{max-width:900px;margin:0 auto}
+.tag{font-size:13px;color:var(--gold);letter-spacing:.04em;text-transform:uppercase;font-weight:700}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:600;margin:6px 0 4px;font-size:28px}header p{margin:0;color:#d9dee8}
+main{padding:20px 16px 40px}.consigne{background:#fff;border-left:4px solid var(--gold);padding:14px 16px;border-radius:6px;margin-bottom:18px}
+.card{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:18px;margin-bottom:18px}
+h2{font-family:'Fraunces',Georgia,serif;color:var(--navy);font-size:21px;margin:0 0 10px}
+.q{padding:12px 0;border-top:1px solid var(--rule)}.q:first-of-type{border-top:0}
+.q .ask{font-weight:700;margin-bottom:6px}.th{display:inline-block;font-size:11px;background:#e8eef6;color:var(--blue);border-radius:10px;padding:1px 8px;margin-left:6px;font-weight:700;vertical-align:middle}
+label.opt{display:block;padding:6px 10px;border:1px solid var(--rule);border-radius:6px;margin:5px 0;cursor:pointer}
+label.opt:hover{background:#faf8f3}label.opt input{margin-right:8px}
+label.opt.good{border-color:var(--ok);background:#eaf4ee}label.opt.bad{border-color:var(--ko);background:#fbecec}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:8px 0;border-top:1px solid var(--rule)}.row:first-of-type{border-top:0}
+.row .lib{flex:1 1 320px}select,input.num{font:inherit;padding:6px 8px;border:1px solid #bbb;border-radius:6px;background:#fff}
+input.num{width:150px;text-align:right}.ok{border-color:var(--ok)!important;background:#eaf4ee!important}.ko{border-color:var(--ko)!important;background:#fbecec!important}
+.expl{display:none;margin-top:8px;padding:10px 12px;background:#f7f5ef;border-radius:6px;font-size:14px}.show .expl{display:block}
+.expl b{color:var(--navy)}.ref{color:#666;font-style:italic}
+button{font:inherit;font-weight:700;border:0;border-radius:8px;padding:11px 18px;cursor:pointer;background:var(--blue);color:#fff}
+button:disabled{background:#9aa7b8;cursor:not-allowed}button.sec{background:#fff;color:var(--blue);border:2px solid var(--blue)}
+button.done{background:var(--ok)}.res{margin-top:10px;font-weight:700}.bar{height:8px;background:#e6e1d6;border-radius:4px;overflow:hidden;margin:10px 0}
+.bar i{display:block;height:100%;background:var(--gold);width:0}
+.banner{padding:14px 16px;border-radius:8px;color:#fff;font-weight:700;margin:12px 0}.banner.bok{background:var(--ok)}.banner.bko{background:var(--amb)}
+.score{font-family:'Fraunces',Georgia,serif;font-size:44px;color:var(--navy);margin:0}
+table.bil{width:100%;border-collapse:collapse;margin-top:8px}table.bil td,table.bil th{border:1px solid var(--rule);padding:6px 8px;text-align:left}table.bil th{background:var(--navy);color:#fff}
+footer{text-align:center;font-size:12px;color:#666;padding:16px}
+.noselect{-webkit-user-select:none;user-select:none}
+@media (max-width:600px){h1{font-size:23px}input.num{width:120px}}
+</style></head>
+<body>
+<header><div class="in"><div class="tag">TMK Performances · CQP Chargé de clientèle — Fondamentaux de l'assurance 2/2</div><h1>Assiettes, IARD et encadrement</h1><p>Exercice d'entraînement · 3 ateliers · avant le QCM de validation</p></div></header>
+<main>
+<div class="consigne"><b>Exercice d'entraînement</b> — à faire en binôme avant le QCM de validation. Trois ateliers indépendants.
+Une fois un atelier validé, <b>vos réponses sont figées</b> et la correction s'affiche : relisez avant de valider.
+Montants en euros, arrondis au centime ; vous pouvez saisir une virgule ou un point.<br>
+Repères 2026 : PMSS = 4 005 € · CSG/CRDS = 98,25 % du brut · temps partiel : plafond = PMSS × durée contractuelle ÷ 35 h.</div>
+<div class="bar"><i id="prog"></i></div>
+
+<section class="card" id="at1"><h2>Atelier 1 — Qui fait quoi ?</h2><p>Associez chaque rôle à l'organisme correspondant.</p>
+<div class="row" data-k="o0"><div class="lib">Agrée les entreprises d'assurance et contrôle leur solvabilité et leurs pratiques commerciales</div><select id="o0"><option value="">— choisir —</option><option>La Médiation de l'Assurance</option><option>ORIAS</option><option>CNIL</option><option>ACPR</option><option>CCR</option><option>Tracfin</option></select><div class="expl" style="flex-basis:100%">Réponse : <b>ACPR</b></div></div><div class="row" data-k="o1"><div class="lib">Tient le registre dans lequel les intermédiaires d'assurance doivent s'immatriculer</div><select id="o1"><option value="">— choisir —</option><option>La Médiation de l'Assurance</option><option>ORIAS</option><option>CNIL</option><option>ACPR</option><option>CCR</option><option>Tracfin</option></select><div class="expl" style="flex-basis:100%">Réponse : <b>ORIAS</b></div></div><div class="row" data-k="o2"><div class="lib">Reçoit les déclarations de soupçon en matière de blanchiment</div><select id="o2"><option value="">— choisir —</option><option>La Médiation de l'Assurance</option><option>ORIAS</option><option>CNIL</option><option>ACPR</option><option>CCR</option><option>Tracfin</option></select><div class="expl" style="flex-basis:100%">Réponse : <b>Tracfin</b></div></div><div class="row" data-k="o3"><div class="lib">Veille au respect du RGPD dans le traitement des données des clients</div><select id="o3"><option value="">— choisir —</option><option>La Médiation de l'Assurance</option><option>ORIAS</option><option>CNIL</option><option>ACPR</option><option>CCR</option><option>Tracfin</option></select><div class="expl" style="flex-basis:100%">Réponse : <b>CNIL</b></div></div><div class="row" data-k="o4"><div class="lib">Offre au client un recours amiable et gratuit après une réclamation</div><select id="o4"><option value="">— choisir —</option><option>La Médiation de l'Assurance</option><option>ORIAS</option><option>CNIL</option><option>ACPR</option><option>CCR</option><option>Tracfin</option></select><div class="expl" style="flex-basis:100%">Réponse : <b>La Médiation de l'Assurance</b></div></div><div class="row" data-k="o5"><div class="lib">Assure la réassurance publique du régime des catastrophes naturelles</div><select id="o5"><option value="">— choisir —</option><option>La Médiation de l'Assurance</option><option>ORIAS</option><option>CNIL</option><option>ACPR</option><option>CCR</option><option>Tracfin</option></select><div class="expl" style="flex-basis:100%">Réponse : <b>CCR</b></div></div>
+<button id="b1" onclick="valider(1)">Valider l'atelier 1</button><div class="res" id="r1"></div></section>
+
+<section class="card" id="at2"><h2>Atelier 2 — Calculs IARD</h2><div class="row" data-k="a1"><div class="lib">8 000 assurés, fréquence de sinistres de 4 %, coût moyen de 1 500 €. Charge totale des sinistres attendue (€) :</div><input class="num" id="a1" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">8 000 × 4 % = 320 sinistres ; 320 × 1 500 € = <b>480 000 €</b>.</div></div><div class="row" data-k="a2"><div class="lib">Même portefeuille : prime pure par assuré (€) :</div><input class="num" id="a2" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">480 000 € ÷ 8 000 assurés = <b>60 €</b>. La prime commerciale ajoute les chargements et les taxes.</div></div><div class="row" data-k="a3"><div class="lib">Maison d'une valeur réelle de 250 000 €, assurée pour 200 000 €. Dommage de 30 000 €, sans franchise. Indemnité (€) :</div><input class="num" id="a3" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">Règle proportionnelle (art. L. 121-5 C. assur.) : 30 000 × 200 000 ÷ 250 000 = <b>24 000 €</b>.</div></div><div class="row" data-k="a4"><div class="lib">Dommage de 1 800 € garanti, franchise de 300 €. Indemnité (€) :</div><input class="num" id="a4" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">1 800 − 300 = <b>1 500 €</b> : la franchise reste à la charge de l'assuré.</div></div>
+<button id="b2" onclick="valider(2)">Valider l'atelier 2</button><div class="res" id="r2"></div></section>
+
+<section class="card" id="at3"><h2>Atelier 3 — Assiettes de cotisations (2026)</h2><div class="row" data-k="s1a"><div class="lib">Salarié 1 — temps plein, 2 900 € brut : assiette plafonnée</div><input class="num" id="s1a" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">Salaire inférieur au PMSS (4 005 €) : assiette plafonnée = <b>2 900,00 €</b>.</div></div><div class="row" data-k="s1b"><div class="lib">Salarié 1 — assiette CSG/CRDS</div><input class="num" id="s1b" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">2 900 × 98,25 % = <b>2 849,25 €</b>.</div></div><div class="row" data-k="s2a"><div class="lib">Salarié 2 — temps plein, 6 200 € brut : assiette plafonnée</div><input class="num" id="s2a" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">Salaire supérieur au PMSS : assiette plafonnée = <b>4 005,00 €</b>.</div></div><div class="row" data-k="s2b"><div class="lib">Salarié 2 — tranche 2 Agirc-Arrco</div><input class="num" id="s2b" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">6 200 − 4 005 = <b>2 195,00 €</b> (tranche 2 : de 1 à 8 PMSS).</div></div><div class="row" data-k="s2c"><div class="lib">Salarié 2 — assiette CSG/CRDS</div><input class="num" id="s2c" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">6 200 × 98,25 % = <b>6 091,50 €</b>.</div></div><div class="row" data-k="s3a"><div class="lib">Salarié 3 — temps partiel 20 h / 35 h, 2 000 € brut : plafond applicable</div><input class="num" id="s3a" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">4 005 × 20 ÷ 35 = 2 288,571… soit <b>2 288,57 €</b>.</div></div><div class="row" data-k="s3b"><div class="lib">Salarié 3 — assiette plafonnée</div><input class="num" id="s3b" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">Salaire (2 000 €) inférieur au plafond réduit : assiette plafonnée = <b>2 000,00 €</b>.</div></div><div class="row" data-k="s4a"><div class="lib">Salarié 4 — temps partiel 30 h / 35 h, 3 800 € brut : plafond applicable</div><input class="num" id="s4a" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">4 005 × 30 ÷ 35 = 3 432,857… soit <b>3 432,86 €</b>.</div></div><div class="row" data-k="s4b"><div class="lib">Salarié 4 — assiette plafonnée</div><input class="num" id="s4b" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">Salaire supérieur au plafond réduit : assiette plafonnée = <b>3 432,86 €</b> (et non 3 800 €).</div></div><div class="row" data-k="s4c"><div class="lib">Salarié 4 — assiette déplafonnée</div><input class="num" id="s4c" inputmode="decimal" placeholder="0,00"> €<div class="expl" style="flex-basis:100%">L'assiette déplafonnée reste le salaire brut total : <b>3 800,00 €</b>.</div></div>
+<button id="b3" onclick="valider(3)">Valider l'atelier 3</button><div class="res" id="r3"></div></section>
+
+<section class="card"><h2>Bilan</h2><div id="bilan">Validez les trois ateliers pour afficher votre bilan.</div>
+<p><button class="sec" onclick="recommencer()">Recommencer l'exercice</button></p></section>
+</main>
+<footer><div class="in">TMK Performances - N° Siret : 49841924100027 - Code NAF : 8559A</div></footer>
+<script>
+const A1=[["Agrée les entreprises d'assurance et contrôle leur solvabilité et leurs pratiques commerciales", "ACPR"], ["Tient le registre dans lequel les intermédiaires d'assurance doivent s'immatriculer", "ORIAS"], ["Reçoit les déclarations de soupçon en matière de blanchiment", "Tracfin"], ["Veille au respect du RGPD dans le traitement des données des clients", "CNIL"], ["Offre au client un recours amiable et gratuit après une réclamation", "La Médiation de l'Assurance"], ["Assure la réassurance publique du régime des catastrophes naturelles", "CCR"]], A2=[["a1", 0, 480000], ["a2", 0, 60], ["a3", 0, 24000], ["a4", 0, 1500]], A3=[["s1a", 0, 2900], ["s1b", 0, 2849.25], ["s2a", 0, 4005], ["s2b", 0, 2195], ["s2c", 0, 6091.5], ["s3a", 0, 2288.57], ["s3b", 0, 2000], ["s4a", 0, 3432.86], ["s4b", 0, 3432.86], ["s4c", 0, 3800]];
+const done={1:null,2:null,3:null};
+function val(s){s=(s||'').replace(/\s|\u00a0|€/g,'').replace(',','.');return s===''?NaN:Number(s);}
+function valider(n){
+  const sec=document.getElementById('at'+n); let ok=0,tot=0,empty=false;
+  if(n===1){A1.forEach((a,i)=>{if(!document.getElementById('o'+i).value)empty=true;});}
+  else{(n===2?A2:A3).forEach(a=>{if(isNaN(val(document.getElementById(a[0]).value)))empty=true;});}
+  if(empty){document.getElementById('r'+n).textContent='Complétez toutes les réponses avant de valider.';return;}
+  if(n===1){A1.forEach((a,i)=>{const el=document.getElementById('o'+i);tot++;const g=el.value===a[1];if(g)ok++;el.classList.add(g?'ok':'ko');el.disabled=true;});}
+  else{(n===2?A2:A3).forEach(a=>{const el=document.getElementById(a[0]);tot++;const g=Math.abs(val(el.value)-a[2])<=0.011;if(g)ok++;el.classList.add(g?'ok':'ko');el.disabled=true;});}
+  sec.classList.add('show');
+  const b=document.getElementById('b'+n);b.textContent='Atelier validé';b.disabled=true;b.classList.add('done');
+  document.getElementById('r'+n).textContent='Résultat : '+ok+' / '+tot;
+  done[n]=[ok,tot];majBilan();
+}
+function majBilan(){
+  const v=Object.values(done).filter(Boolean);document.getElementById('prog').style.width=(v.length/3*100)+'%';
+  if(v.length<3)return;
+  const ok=v.reduce((s,x)=>s+x[0],0),tot=v.reduce((s,x)=>s+x[1],0),p=Math.round(ok/tot*100);
+  const lib=p>=90?'Excellent':p>=70?'Acquis':p>=50?'À consolider':'À retravailler';
+  document.getElementById('bilan').innerHTML='<p class="score">'+ok+' / '+tot+'</p><p><b>'+p+' % — '+lib+'</b></p>'+
+   '<table class="bil"><tr><th>Atelier</th><th>Score</th></tr><tr><td>1 — Qui fait quoi ?</td><td>'+done[1][0]+' / '+done[1][1]+'</td></tr><tr><td>2 — Calculs IARD</td><td>'+done[2][0]+' / '+done[2][1]+'</td></tr><tr><td>3 — Assiettes de cotisations</td><td>'+done[3][0]+' / '+done[3][1]+'</td></tr></table>';
+}
+function recommencer(){
+  document.querySelectorAll('select,input.num').forEach(e=>{e.value='';e.disabled=false;e.classList.remove('ok','ko');});
+  document.querySelectorAll('section.card').forEach(s=>s.classList.remove('show'));
+  [1,2,3].forEach(n=>{const b=document.getElementById('b'+n);b.textContent="Valider l'atelier "+n;b.disabled=false;b.classList.remove('done');document.getElementById('r'+n).textContent='';done[n]=null;});
+  document.getElementById('bilan').textContent='Validez les trois ateliers pour afficher votre bilan.';document.getElementById('prog').style.width='0';window.scrollTo(0,0);
+}
+</script></body></html>
